@@ -1,6 +1,10 @@
 # Simplerjiang.ConfigJsonSave
 
 
+Nuget:[![Simplerjiang.ConfigJsonSave](https://img.shields.io/nuget/v/Simplerjiang.ConfigJsonSave.svg)](https://www.nuget.org/packages/Simplerjiang.ConfigJsonSave/)
+[![Simplerjiang.ConfigJsonSave](https://img.shields.io/nuget/dt/Simplerjiang.ConfigJsonSave.svg)](https://www.nuget.org/packages/Simplerjiang.ConfigJsonSave/)
+
+
 
 基于.net standard，用于.net 与 .net core的配置文件Json 及Json转换的类库
 
