@@ -1,8 +1,8 @@
 # Simplerjiang.ConfigJsonSave
 
 
-Nuget:[![Simplerjiang.ConfigJsonSave](https://img.shields.io/nuget/v/Simplerjiang.ConfigJsonSave.svg)](https://www.nuget.org/packages/Simplerjiang.ConfigJsonSave/)
-[![Simplerjiang.ConfigJsonSave](https://img.shields.io/nuget/dt/Simplerjiang.ConfigJsonSave.svg)](https://www.nuget.org/packages/Simplerjiang.ConfigJsonSave/)
+Nuget:[![Simplerjiang.ConfigJsonSave](https://img.shields.io/nuget/v/Simplerjiang.ConfigJsonSave)](https://www.nuget.org/packages/Simplerjiang.ConfigJsonSave/)
+[![Simplerjiang.ConfigJsonSave](https://img.shields.io/nuget/dt/Simplerjiang.ConfigJsonSave)](https://www.nuget.org/packages/Simplerjiang.ConfigJsonSave/)
 
 
 
