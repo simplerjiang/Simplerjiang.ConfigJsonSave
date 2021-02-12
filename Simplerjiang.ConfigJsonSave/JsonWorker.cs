@@ -54,7 +54,7 @@ namespace Simplerjiang.ConfigJsonSave
         /// <param name="data">数据类</param>
         /// <param name="path">文件地址</param>
         /// <returns></returns>
-        public static int Write<T>(T data, string path) where T : new()
+        public static Exception Write<T>(T data, string path) where T : new()
         {
             lock (File_Lock)
             {
@@ -63,31 +63,26 @@ namespace Simplerjiang.ConfigJsonSave
                 {
                     file = new FileStream(path, FileMode.Create);
                 }
-                catch (IOException)
+                catch (Exception ex)
                 {
                     // IO错误，以后写到日志里
-                    return -1;
-                }
-                catch (System.Security.SecurityException)
-                {
-                    //文件权限错误，以后写到日志里
-                    return -2;
+                    return ex;
                 }
                 DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(T));
                 try
                 {
                     serializer.WriteObject(file, data);
                 }
-                catch (InvalidOperationException)
+                catch (Exception ex)
                 {
                     //写入失败
-                    return -3;
+                    return ex;
                 }
                 finally
                 {
                     file.Close();
                 }
-                return 0;
+                return null;
             }
         }
 
@@ -115,20 +110,24 @@ namespace Simplerjiang.ConfigJsonSave
                 catch (System.Security.SecurityException)
                 {
                     //文件权限错误，以后写到日志里
+                    Write(new T(), path);
                     return new T();
                 }
                 catch (FileNotFoundException)
                 {
+                    Write(new T(), path);
                     return new T();
                 }
                 catch (IOException)
                 {
                     // IO错误，代表所有的file异常，以后写到日志里
+                    Write(new T(), path);
                     return new T();
                 }
                 catch (InvalidOperationException)
                 {
                     //读取失败
+                    Write(new T(), path);
                     return new T();
                 }
                 return t;
